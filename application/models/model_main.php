@@ -8,17 +8,15 @@ class Model_Main extends Model {
   public $user;
 
   public function __construct() {
-    $db = new DataBase;
-    $this->database = $db->connect();
+    $this->database = Database::connect();
     $this->date = new Date;
     $this->user = new User;
   }
   
-  public function getPosts($offset = 0){
+  public function getNews($offset = 0) {
     $has_more = false;
     $offset = intval($offset);
-    $sql = "SELECT `id`, `title`, `text`, `date_created`, `owner_id`, `is_deleted` FROM `news` WHERE `is_deleted` = 0 ORDER BY `id` DESC LIMIT :offset, :max_rows"; 
-    $get_posts = $this->database->prepare($sql);
+    $get_posts = $this->database->prepare("SELECT `id`, `owner_id`, `date_created`, `title`, `text`, `attachments` FROM `news` ORDER BY `id` DESC LIMIT :offset, :max_rows");
     $get_posts->bindParam(':offset', $offset, PDO::PARAM_INT);
     $get_posts->bindParam(':max_rows', $this->max_rows,  PDO::PARAM_INT);
     $get_posts->execute();
@@ -43,7 +41,7 @@ class Model_Main extends Model {
       $arr[] = $row;
     }
 
-    if(count($arr) > $this->max_rows - 1) {
+    if(count($arr) >= $this->max_rows) {
       $has_more = true;
     }
 
