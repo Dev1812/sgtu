@@ -1,0 +1,5 @@
+var Albums = {
+  showPhoto: function() {
+  	
+  }
+}

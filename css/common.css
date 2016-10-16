@@ -1,0 +1,76 @@
+@media screen and (min-width:100px) and (max-width:968px){}
+@font-face{font-family:'Myraid Set Pro Thin';src:url(/fonts/myriad-set-pro_thin.woff) format("woff");}
+@font-face{font-family:'Myraid Set Pro Text';src:url(/fonts/myriad-set-pro_text.woff) format("woff");}
+html,body{background-color:#FAFAFA;-webkit-font-smoothing:subpixel-antialiased;-moz-osx-font-smoothing:auto;margin:0;padding:0;font-size:17px;font-family:'Myraid Set Pro Thin',Arial,tahoma,verdana,sans-serif;}
+a{text-decoration:none;color:#128ee9;}
+#wrap1{}
+#top_error{z-index:110;position:fixed;top:0;left:0;display:none;border-bottom-right-radius:5px;padding:7px 10px;background-color:#FFB4A3;}
+.fl_r{float:right;}
+.content{background-color:#FFF;overflow:hidden;}
+.head{background:#0277bd;list-style:none;height:45px;z-index:5;font-size:14.9px;padding:0 14px;}
+.head_link{padding:0 17px;line-height:45px;float:left;transition:color,background .17s ease;color:#FFF;}
+.head_link:hover{background-color:#0270b1;}
+.head_logo{}
+#head_menu{position:fixed;top:0;right:0;margin-top:57px;margin-right:34px;border:1px solid #EDEDED;width:150px;padding:5px 0;border-radius:2px;background-color:#FFF;display:none}
+.head_menu_link{padding:5px 15px;color:gray;font-size:15px;transition:background-color .1s ease;cursor:pointer}
+.head_menu_link:hover{background-color:#FAFAFA}
+.clear{clear: both;}
+.footer{background-color:#FAFAFA;border-top:1px solid #F3F3F3;padding:17px 0 25px;text-align:center;line-height:33px;}
+.footer_link{padding:0 7px;color:#434;font-size:18px;}
+.font_myraid_text{}
+.textarea{height:57px!important;}
+.footer,.head{font-family:'Myraid Set Pro Text',Arial,tahoma,verdana,sans-serif !important;}
+.load_more{text-align:center;padding:7px 0;border-radius:3px;color:gray;cursor:pointer;transition:background-color .1s linear;margin:5px 0}
+.load_more:hover{background-color:#F5F5F5}
+.icon_upload{background:url(/images/upload.gif) no-repeat;width:21px;height:21px;margin:0 auto;display:none}
+.text_field,input,.submit,.button{font-family:'Myraid Set Pro Thin',Arial,tahoma,verdana,sans-serif}
+.text_field{border:1px solid #CCC;width:100%;border-radius:3px;height:35px;line-height:35px;font-size:15px;padding:0 14px;box-sizing:border-box;transition:all .3s ease-out}
+.text_field:focus{outline:none;border:1px solid #1E93F2;box-shadow:0 0 5px #0B6BBB}
+
+.submit{background-color:#0084ff;padding:0 11px;border-radius:3px;color:#FFF;font-weight:700;cursor:pointer;width:100%;height:33px;line-height:35px;font-size:15px;background:#4C8EFA;cursor:pointer;color:#FFF;padding:0 15px;border:0;margin:0;text-align:center;box-sizing:border-box;user-select:none;-webkit-user-select:none;transition:background,box-shadow .3s ease}
+.submit:hover{background:#0D82E1}
+.submit:focus,.text_field:focus{outline:none}
+.form_msg{display:none;color:gray;margin-bottom:17px;color:gray;font-size:17px;}
+.form_msg_err{background:#FFF9E8;border:1px solid #F7EED7;padding:12px 17px;color:#808080;margin-bottom:23px;margin-bottom: 12px;padding:9px 15px;color: #808080;font-size: 16px;}
+.err_field{border:1px solid #E8ACAA;}
+.form{width:67%;margin:auto;font-size:16px}
+
+.form_msg_title{padding:3px 0 7px;font-size:16px;font-weight:bold;}
+.err_field{border:1px solid #e28a88}
+.button{width:auto;padding:0 17px}
+.input_wrap{padding:11px 0;position:relative}
+.float_left{float:left}
+.user_block_wrap{margin-left:53px;vertical-align:top}
+.user_block_name{font-weight:700}
+.user_block_body{padding:3px 0}
+.user_block{padding:14px 0}
+.user_photo{width:41px;height:41px;border-radius:50px}
+
+.submit:focus,.button:focus,.flat_button:focus,.text_field:focus{outline:none}
+.flat_button{height:27px;line-height:27px;margin-right:8px;padding:0 9px;color:#4285F4;cursor:pointer;background-color:transparent;border:0;border-radius:3px;text-transform:uppercase;font-size:11px;font-weight:700;transition:background .1s ease}
+.float_right{float:right}
+.flat_button:hover{background-color:#DDD}
+.flat_button:active{background-color:#CCC}
+
+
+.layer_background{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background-color:#000;z-index:7;opacity:.7;overflow:hidden}
+.pb_background_close{z-index:100;position:absolute;top:31px;right:31px;opacity:.8;cursor:pointer;transition:opacity .1s ease;padding:17px;}
+.pb_background_close:hover{opacity:.4;}
+.layer{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:10;overflow:hidden}
+.pb{}
+.pb_wrap{width:40%;box-shadow:0 2px 10px rgba(0,0,0,.35);margin:90px auto;background-color:#FFF;}
+.pb_title_wrap{position:relative;padding:0;background-color:rgb(63,117,181);color:#FFF;}
+.pb_title{font-family:'Myraid Set Pro Text',Arial,tahoma,verdana,sans-serif !important;padding-left:24px;font-size:18px;height:54px;line-height:54px;overflow:hidden}
+.pb_close{float:right;background:url('/images/close.png') no-repeat;width:59px;height:54px;cursor:pointer;outline:none;background-position:center;line-height:54px;position:relative;opacity:.75;filter:alpha(opacity=75);transition:opacity .1s ease;}
+.pb_close:hover{opacity:.6;}
+.pb_body{padding:9px 16px}
+.pb_controls{padding:7px 16px;background-color:#EEE;height:27px}
+.form_text{color:#808080;padding-bottom:11px;}
+
+.obj_not_found{text-align:center;font-size:21px;color:#808080;}
+
+#back_to_top{position:fixed;top:0;width:90px;padding:17px 14px 0 9px;text-align:center;left:0;bottom:0;color:#0882C4;cursor:pointer;font-size:16px;display:none;}
+#back_to_top:hover{background-color:#eff4f7;}
+.back_to_top_icon{position:relative;right:3px;top:-2px;}
+
+.upload_icon{background:url('/images/icons/upload.gif') no-repeat;margin:0 auto;width:21px;height:21px;}

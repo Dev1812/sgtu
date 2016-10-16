@@ -1,0 +1,25 @@
+  .content{
+  padding:71px 24% 91px;
+}
+.big_photo{
+  width:150px;
+  height:150px;
+  float:left;
+  border-radius:2px;
+  cursor:pointer;
+}
+.profile_info{
+  vertical-align:top;
+  padding-left:200px;
+  line-height:25px;
+}
+.user_name{
+  font-size:23px;
+  color:#0404ce;
+  padding:5px 0 9px;
+}
+.info_key{
+  width:150px;
+  float:left;
+  color:#808080;
+}

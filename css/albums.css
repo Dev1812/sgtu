@@ -1,0 +1,47 @@
+.content {
+  padding:74px 17%;
+  text-align: center;
+}
+
+.albums{
+      width: 762px;
+    position: relative;
+    display: inline-block;
+}
+.album_block{
+  padding:11px;
+
+
+  margin:14px 1px 0;cursor:pointer;
+
+  float: left;
+}
+.album_wrap{display:block;}
+.album_cover{
+	 width:230px;height:140px;
+}
+.album_title{
+	padding-top:5px;font-family:'Myraid Set Pro Text',Arial,tahoma,verdana,sans-serif;
+}
+.album_block:hover{
+  box-shadow:0 0 3px #DDD;
+}
+
+.photos_title{
+  font-family: 'Myraid Set Pro Text',Arial,tahoma,verdana,sans-serif;
+  margin: 5px 0 21px;
+  font-size:23px;
+ }
+.photo_wrap{
+  float:left;
+  overflow:hidden;
+  display: inline-block;
+  vertical-align: top;
+  border: none;
+  margin:2px 3px 2px 3px;
+  cursor:pointer;
+}
+.photo{
+  width: 195px;
+  height: 127px;
+}

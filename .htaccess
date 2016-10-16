@@ -1,0 +1,11 @@
+# 1 час сессия 
+php_value session.gc_maxlifetime 3600
+
+AddDefaultCharset utf-8
+DirectoryIndex index.php
+RewriteEngine On
+
+RewriteRule ^id(.*)$ /profile/get/?profile_id=$1 [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L]

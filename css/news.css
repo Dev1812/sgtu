@@ -1,0 +1,9 @@
+.news{padding:37px 12%;}
+.news_block{padding:37px 0;}
+.news_title{font-size:29px;color:#37474f;line-height:37px;}
+/*.news_title_link{color:#37474f;}*/
+.news_title_link:hover{color:#929292;transition:color .17s ease;}
+.news_text{font-size:19px;line-height:25px;}
+.news_info{padding:11px 0;}
+.news_info_link{color:#696969;}
+.news_not_found{padding:50px 0 !important;}

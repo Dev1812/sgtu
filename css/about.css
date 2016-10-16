@@ -1,0 +1,13 @@
+.about{
+
+}
+.about_title{
+  font-family: 'Myraid Set Pro Text',Arial,tahoma,verdana,sans-serif;
+  font-size:23px;
+  color: #777;
+  margin-bottom:17px;
+}
+.about_text{
+  color: #333;
+  line-height:25px;
+}

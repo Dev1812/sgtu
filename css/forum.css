@@ -1,0 +1,119 @@
+#forum{padding:37px 29%;}
+.forum_block{padding:19px 19px;border-bottom: 1px solid #DDD;}
+.forum_block:last-child{border-bottom:0;}
+.forum_title{font-size:23px;color:#37474f;line-height:!37px;}
+.forum_title_link{color:#0277BD;}
+.forum_title_link:hover{color:#929292;transition:color .17s ease;}
+.forum_text{font-size:19px;line-height:25px;}
+.forum_info{padding:3px 0;}
+.forum_info_link{color:#696969;}
+/*4 lojhki masla*/
+.posts_no_found{padding:44px 0 94px;}
+
+.forum_msg_text{padding:5px 0 !important;}
+#write_msg_block{position:relative;margin:15px 0 7px;z-index:0;}
+
+#write_msg_layer{
+  position:fixed;
+  right:0;
+  bottom:0;
+  margin:17px;
+  padding:7px 5px;
+ /* border: 1px solid #E1E1E1;*/
+  border-radius:3px;
+  cursor:pointer;
+  z-index:2;
+  transition:opacity .1s ease;
+  opacity:0;
+}
+.write_msg_layer_scroll{
+  opacity:1 !important;
+}
+#write_msg_layer:hover{
+  transition: background .1s ease;
+  background-color: #F1F1F1;
+}
+.write_msg_layer_link{
+  /*background:#FFF;*/
+  color:#a9a9a9;
+  /*border:1px solid #0084ff;*/
+  background:transparent;
+  text-transform:uppercase;
+  font-size:10px;
+  padding:0 11px;
+  font-weight:bold;
+}
+.forum_msg_info{font-size:16px;color:#808080;}
+.icon_attach{
+  position:absolute;
+  top:0;
+  right:0;
+  width:17px;
+  padding:7px 4px;
+  cursor:pointer;
+  margin:7px 4px;
+  height:17px;
+  background: url('/images/attach.png') no-repeat;
+}
+
+.file{
+  opacity:0.01;
+  filter:alpha(opacity=1);
+  right:0px;
+  margin:0px;
+  padding:0px;
+  position:absolute;
+  cursor:pointer;
+}
+.upload_photo{
+  width:21px;
+  height:21px;
+  margin:7px 5px;
+  overflow:hidden;
+  position:absolute;
+  right:0;
+  background:url('/images/upload1.png') no-repeat;
+  transition:opacity .2s ease;
+}
+.upload_photo:hover{
+  opacity:.7;
+}
+.photo_upload{
+
+}
+.photo_upload_preview{
+  position:relative;
+  margin:9px 0;
+}
+.photo_upload_progress_wrap{
+  width:50%;
+  display:inline-block;
+  background:#E9ECF0;
+}
+.photo_upload_progress{
+  width:0%;
+  background:#5474A0 url('http://vk.com/images/progress_grad_flat.gif');
+  height:19px;
+}
+.photo_upload_file_name{
+  color:#333;
+  font-size:14px;
+  vertical-align:top;
+  height:19px;
+  padding:3px 7px;
+}
+.photo_upload_close{
+  background:url('/images/close_gray.png') no-repeat;
+  width: 17px;
+  height: 17px;
+  padding:3px;
+  position: relative;
+  top: -3px;
+  background-position: center;
+  cursor: pointer;  
+  vertical-align:top;
+  transition:opacity .1s ease;
+}
+.photo_upload_close:hover{
+  opacity: .71; 
+}

@@ -1,0 +1,48 @@
+.content {
+  padding:74px 21% 124px;
+}
+.contacts_title {
+  font-family: 'Myraid Set Pro Text',Arial,tahoma,verdana,sans-serif;
+  margin: 5px 0 11px;
+  font-size:20px;
+}
+.album_block{
+  padding:11px;
+}
+.album_block:hover{
+  box-shadow:0 0 3px #DDD;
+}
+
+.content {
+    padding:74px 17% 124px;
+}
+.contacts_title {
+    font-family: 'Myraid Set Pro Text',Arial,tahoma,verdana,sans-serif;
+    margin: 5px 0 11px;
+    font-size:20px;
+    }
+.album_block{
+padding:11px;
+}
+.album_block:hover{
+  box-shadow:0 0 3px #DDD;
+
+}
+
+.photo_wrap{
+  float:left;
+  overflow:hidden;
+      display: inline-block;
+    vertical-align: top;
+    border: none;
+    margin:2px 3px 2px 3px;
+    cursor:pointer;
+}
+.photo{
+    width: 195px;
+    height: 127px;
+}
+.photos_title{    font-family: 'Myraid Set Pro Text',Arial,tahoma,verdana,sans-serif;
+    margin: 5px 0 21px;
+    font-size:23px;
+    }

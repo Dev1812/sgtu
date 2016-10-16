@@ -1,0 +1,34 @@
+@media screen and (min-width: 320px) and (max-width:480px){}
+.content {
+  padding:65px 24% 97px;
+}
+.contacts_block{
+  margin:31px 0 57px;
+}
+.contacts_title{
+  font-family:'Myraid Set Pro Text',Arial,tahoma,verdana,sans-serif;
+  margin:5px 0 11px;
+  font-size:21px;
+}
+.map_title{
+  margin-bottom:23px;
+}
+.contacts_wrap{
+  font-size:18px;
+  line-height:31px;
+  margin:0 17px;
+}
+.info_title{
+  color:#676767;
+  margin-right:3px;
+}
+.info_value{
+
+}
+#map{
+  width:100%;
+  height:350px;
+  background-color:#FDFDFD;
+  border-radius:3px;
+  border:1px solid #EEE;
+}

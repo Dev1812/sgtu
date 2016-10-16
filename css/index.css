@@ -1,0 +1,35 @@
+.head{position:absolute;top:0;left:0;right:0;background-color:transparent;}
+.head_link:hover{background-color:transparent;color:#969696;}
+
+
+.welcome_main{background:url('/images/sgtu_photo.jpg') no-repeat;height:610px;background-size:cover;position:relative;}
+.welcome_layer{position:absolute;top:0;left:0;right:0;bottom:0;opacity:0.65;filter:alpha(opacity=65);background:#1f212b;}
+.welcome_desc{position:absolute;top:117px;left:0;right:0;}
+
+
+.welcome_desc{text-align:center;padding:74px 12%;color:#FFF;}
+.welcome_desc_title{padding-bottom:32px;font-size:42px;}
+.welcome_desc_text{font-family:"Myraid Set Pro Text", tahoma, verdana, sans-serif;font-size:17px;line-height:43px;}
+
+.wide_column_news{margin:90px 10%;position:relative;}
+.news_column_wrap{float:left;width:78%;}
+.events_column_wrap{vertical-align:top;margin-left:81%;font-family:'Myraid Set Pro Text',Arial,tahoma,verdana,sans-serif !important;}
+
+.news{padding:0 17px 127px;font-size:19px;}
+.events_column_title{}
+
+.news_scroll{padding:37px 170px !important;}
+
+.news_title{font-size:25px;font-family:'Myraid Set Pro Text',tahoma,verdana,sans-serif;}
+.news_info{padding:7px 0;}
+.news_date{color:#808080;}
+.news_divider{padding:0 5px;}
+.news_owner{}
+.news_text{line-height:27px;}
+
+
+.news_read_more{padding-top:5px;}
+.events_column_title{font-size:22px;padding-bottom:9px;}
+.event{padding:9px 0;}
+.event_title{font-size:17px;padding-bottom:4px;}
+
