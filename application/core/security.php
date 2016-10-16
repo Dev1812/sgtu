@@ -1,8 +1,6 @@
 <?php
 class Security {
-	/**
-	 * @param <String> words - Строка для усиления токена
-	 */
+
   public $session_name = 'csrf_token';
 
   public function genCSRFToken($words) {

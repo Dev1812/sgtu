@@ -13,7 +13,6 @@ class Captcha {
     $ts = time();
     if($_SESSION['captcha_try'] > 44) {
       if($_SESSION['captcha_last_ts'] > $ts - 2 * 60) {
-        // return echo '<b>Ошибка безопасности</b><br>Похоже, вы попытались сделать большое количество однотипных запросов за последнее время. Пожалуйста, попробуйте позже.';
         header('Content-Type: image/png');
         echo file_get_contents(SITE_ROOT.'/images/security_err.png');
         exit;
@@ -30,7 +29,7 @@ class Captcha {
     $font_size = 14;            //Размер шрифта
     $let_amount = 5;            //Количество символов, которые нужно набрать
     $fon_let_amount = 5;       //Количество символов на фоне
-    $font = 'fonts/arial.ttf';   //Путь к шрифту
+    $font = SITE_ROOT.'/fonts/arial.ttf';   //Путь к шрифту
     
     $letters = array(1,2,3,4,5,6,7,8,9);      
     $colors = array(90,110,130,150);  
