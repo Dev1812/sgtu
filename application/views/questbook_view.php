@@ -30,7 +30,10 @@
     <div id="questbook_msg">
       <input type="hidden" name="questbook_offset" id="questbook_offset" value="20">
 <?php
-  foreach($data['questbok_msg'] as $v) {
+  if(empty($data['questbok_msg']) || !is_array($data['questbook_msg'])) {
+    echo '<div class="obj_not_found">'.$i18n['posts_not_found'].'</div>';
+  } else {
+    foreach($data['questbok_msg'] as $v) {
 ?>
     <div class="post" id="post_<?=$v['id'];?>">
       <img class="author_photo float_left" src="/images/no_photo.png" alt="<?=$v['owner_name'];?>">
@@ -46,12 +49,19 @@
       </div>
     </div>
 <?php
-}
+    }
+
+  if($data['questbook_msg']['has_more'] === true) {
 ?>
-    </div>
     <div class="load_more" id="load_more" onClick="Questbook.getMore();">
       <div id="load_more_text" class=""><?=$i18n['load_more'];?></div>
       <img id="load_more_upload" style="display:none;margin:0 auto;" src="/images/upload.gif">
+    </div>
+<?php
+  }
+
+  }
+?>
     </div>
   </div>
 

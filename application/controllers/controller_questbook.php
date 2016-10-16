@@ -17,7 +17,7 @@ class Controller_Questbook extends Controller {
   }
 
   public function action_index() {
-    $i18n = $this->i18n->get(array('questbook','notes','load_more','create_note','your_name','your_message','captcha_code','send'));
+    $i18n = $this->i18n->get(array('questbook','posts_not_found','notes','load_more','create_note','your_name','your_message','captcha_code','send'));
     $data['form_hash'] = $this->security->getCSRFToken();
     $param['title'] = $i18n['questbook'];
     $param['css'] = array('questbook');

@@ -7,7 +7,7 @@ class Log {
    * @param <Text> text - Текст для записи
    *
    */
-  public static write($text) {
+  public function write($text) {
     $ip = User::getIp();
     $path = SITE_ROOT.'application/logs/'.date('d.m.Y').'.txt';
     $time = date('h:i:s');
