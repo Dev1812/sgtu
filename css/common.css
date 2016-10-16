@@ -15,8 +15,8 @@ a{text-decoration:none;color:#128ee9;}
 .head_menu_link{padding:5px 15px;color:gray;font-size:15px;transition:background-color .1s ease;cursor:pointer}
 .head_menu_link:hover{background-color:#FAFAFA}
 .clear{clear: both;}
-.footer{background-color:#FAFAFA;border-top:1px solid #F3F3F3;padding:17px 0 25px;text-align:center;line-height:33px;}
-.footer_link{padding:0 7px;color:#434;font-size:18px;}
+.footer{background-color:#FAFAFA;border-top:1px solid #F3F3F3;padding:9px 0 25px;text-align:center;line-height:27px;font-size:16px;}
+.footer_link{padding:0 7px;color:#434;}
 .font_myraid_text{}
 .textarea{height:57px!important;}
 .footer,.head{font-family:'Myraid Set Pro Text',Arial,tahoma,verdana,sans-serif !important;}
@@ -67,7 +67,7 @@ a{text-decoration:none;color:#128ee9;}
 .pb_controls{padding:7px 16px;background-color:#EEE;height:27px}
 .form_text{color:#808080;padding-bottom:11px;}
 
-.obj_not_found{text-align:center;font-size:21px;color:#808080;}
+.obj_not_found{text-align:center;font-size:19px;color:#808080;font-family:'Myraid Set Pro Text',Arial,tahoma,verdana,sans-serif;}
 
 #back_to_top{position:fixed;top:0;width:90px;padding:17px 14px 0 9px;text-align:center;left:0;bottom:0;color:#0882C4;cursor:pointer;font-size:16px;display:none;}
 #back_to_top:hover{background-color:#eff4f7;}
