@@ -4,20 +4,20 @@
   .posts_title{margin-left:23px;}
 }
 
-.content{padding:71px 15% 0;}
+#questbook{padding:71px 21% 0;}
 .questbook_block{padding-bottom:59px;}
 .write_message_block{width:80%;margin:0 auto;padding-bottom:79px !important;}
 .author_photo{width:45px;height:45px;border-radius:120px;}
 .post{padding:11px 0;border-bottom:1px solid #EEE;cursor:pointer;}
 .post:last-child{border-bottom:0;}
-.post_text{font-size:18px;line-height:26px;color:#333;}
+.post_text{margin:1px 0;font-size:18px;line-height:26px;color:#333;}
 .post_wrap{margin-left:63px;}
 .questbook_title{margin-bottom:17px;color:#808080;font-size:17px;text-transform:uppercase;font-family:'Myraid Set Pro Text',Arial,tahoma,verdana,sans-serif;}
 .quetbook_button{background:none;border:0;float:left;color:#607D8B;cursor:pointer;font-size:14px;;text-transform:uppercase;border-radius:3px;}
 .quetbook_button:focus{outline: none;}
 .quetbook_button:hover{color:#2E5B71;transition:color .2s ease;}
 .posts_title{font-size:19px;text-transform:none;margin-bottom:11px}
-.post_info{margin-bottom:7px;padding-top:3px;}
-.questbook_date{color:#808080;font-size:17px;}
+.post_info{padding-top:3px;}
+.post_date{color:#808080;font-size:17px;}
 .author_name{font-weight:bold;font-size:18px;}
 .questbook_divider{padding:0 7px;}

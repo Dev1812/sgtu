@@ -1,8 +1,8 @@
-#albums{
+.content{
   padding:74px 17%;
   text-align: center;
 }
-.albums{
+#albums{
   width: 762px;
   position: relative;
   display: inline-block;
@@ -12,6 +12,7 @@
   margin:14px 1px 0;
   cursor:pointer;
   float: left;
+  max-width:230px;
 }
 .album_wrap{
   display:block;
@@ -23,6 +24,8 @@
 .album_title{
 	padding-top:5px;
   font-family:'Myraid Set Pro Text',Arial,tahoma,verdana,sans-serif;
+  max-height:39px;
+  overflow: hidden;
 }
 .album_block:hover{
   box-shadow:0 0 3px #DDD;

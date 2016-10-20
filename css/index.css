@@ -30,6 +30,7 @@
 
 .news_read_more{padding-top:5px;}
 .events_column_title{font-size:22px;padding-bottom:9px;}
-.event{padding:9px 0;}
+.event{padding:9px 0;max-width:200px;max-height:46px;overflow:hidden;}
 .event_title{font-size:17px;padding-bottom:4px;}
 
+.events_title_link{color:#000;}
