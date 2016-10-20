@@ -1,5 +1,4 @@
 <?php
-
 class Controller_Main extends Controller {
     
   function __construct() {
@@ -14,14 +13,6 @@ class Controller_Main extends Controller {
     $param['title'] = $i18n['welcome'];
     $data['news'] = $this->model->getNews();
     $this->view->generate('main_view.php', 'template_view.php', $param, $data, $i18n);
-  }
-
-  function action_get() {
-    $lang = $this->i18n->get(array('post'));
-    $data['post'] = $this->model->getPost($_GET['news_id']);
-	  $title = str_replace($lang['post'], '%title%', $data['post']['title']);
-    $param['title'] = $title;
-    $this->view->generate('post_view.php', 'template_view.php', $param, $data);
   }
   
 }
