@@ -24,7 +24,7 @@ class Controller_News extends Controller {
     $param['css'] = array('news');
     $param['title'] = $i18n['news'];
     $data['news'] = $this->model->getOneNews($_GET['news_id']); 
-    $this->view->generate('news_one_view.php', 'template_view.php', $param, $data, $i18n);
+    $this->view->generate('get_news_view.php', 'template_view.php', $param, $data, $i18n);
   }
 
 }

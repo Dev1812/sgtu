@@ -25,6 +25,6 @@ class Controller_Albums extends Controller {
     $param['js'] = array('albums');
     $param['title'] = $i18n['photos'];
     $data['photos'] = $this->model->getPhotos($_GET['album_id'], $_GET['offset']);
-    $this->view->generate('albums_photos_view.php', 'template_view.php', $param, $data);
+    $this->view->generate('photos_view.php', 'template_view.php', $param, $data);
   }
 }

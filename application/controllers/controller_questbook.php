@@ -23,13 +23,13 @@ class Controller_Questbook extends Controller {
     $param['css'] = array('questbook');
     $param['js'] = array('questbook');
     $get_msg = $this->model->getMessages();
-    $data['questbok_msg'] = $get_msg['html'];
+    $data['questbook_msg'] = $get_msg['html'];
     $this->view->generate('questbook_view.php', 'template_view.php', $param, $data, $i18n);
   }
 
   public function action_a_send() {
     if(!$this->captcha->checkCode($_POST['captcha_code'])) {
-      $data['ajax'] = array('err'=>true,'err_msg'=>$this->i18n->get('incorrect_code'),'js'=>'updateCaptcha();ge("captcha_code").focus()');
+      $data['ajax'] = array('err'=>true,'err_msg'=>$this->i18n->get('incorrect_code'),'js'=>'updateCaptcha("captcha_img");ge("captcha_code").focus()');
       $this->view->generate(null, '/ajax/ajax_response.php', array(), $data);
     } else if(!$this->security->checkCSRFToken($_POST['form_hash'])) {
       $data['ajax'] = array('err'=>true,'err_msg'=>'<div class="form_msg_title">'.$this->i18n->get('unknown_error').'</div>');
