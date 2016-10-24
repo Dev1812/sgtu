@@ -1,5 +1,4 @@
- <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN"
- "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<!DOCTYPE html>
 <html>
 <head>
   <link rel="shortcut icon" href="/images/icons/favicon.ico">
@@ -7,12 +6,12 @@
   <link rel="stylesheet" type="text/css" href="/css/common.css?1">
   <script type="text/javascript" src="/js/common.js?1"></script>
   <?php
-    if(!empty($param['css']) || is_array($param['css'])) {
+    if(!empty($param['css']) && is_array($param['css'])) {
       foreach ($param['css'] as $v) {
         echo '<link rel="stylesheet" type="text/css" href="/css/'.$v.'.css">';
       }
     }
-    if(!empty($param['js']) || is_array($param['js'])) {
+    if(!empty($param['js']) && is_array($param['js'])) {
       foreach ($param['js'] as $v) {
         echo '<script type="text/javascript" src="/js/'.$v.'.js"></script>';
       }
@@ -90,7 +89,6 @@
     <a class="footer_link" href="/about">О cайте</a>
     <a class="footer_link" href="/support">Помощь</a>
     <a class="footer_link" href="/contacts">Контакты</a>
-    <a class="footer_link" href="/lang" onClick="showBox('/lang/a_get_form', {css: 'width:20%'});">Сменить язык</a>
     <div>Sgtu &copy; <?=date('Y');?></div>
   </div>
 </div>
