@@ -1,17 +1,17 @@
 <?php
 class Model_Reg extends Model{
 
-  const MIN_FIRSTNAME = 4;
-  const MAX_FIRSTNAME = 70;
+  const MIN_FIRSTNAME = 3;
+  const MAX_FIRSTNAME = 31;
 
-  const MIN_LASTNAME = 4;
-  const MAX_LASTNAME = 70;
+  const MIN_LASTNAME = 3;
+  const MAX_LASTNAME = 35;
 
-  const MIN_EMAIL = 4;
-  const MAX_EMAIL = 90;
+  const MIN_EMAIL = 3;
+  const MAX_EMAIL = 51;
 
   const MIN_PASSWORD = 4;
-  const MAX_PASSWORD = 90;
+  const MAX_PASSWORD = 29;
 
   public $i18n;
   public $database;
@@ -19,28 +19,24 @@ class Model_Reg extends Model{
   public $user;
 
   public function __construct() {
-    if(!empty($_SESSION['user_id'])) {
-      header('Location: /id'.$_SESSION['user_id']);
-    }
     $this->i18n = new i18n;
     $this->database = DataBase::connect();
     $this->crypto = new Crypto;
     $this->user = new User;
   }
 
-  public function reg($firstname, $lastname, $email, $password) {
+  public function reg($firstname, $lastname, $email, $password, $ajax = false) {
     $firstname_length = mb_strlen($firstname);
     $lastname_length = mb_strlen($lastname);
     $email_length = mb_strlen($email);
     $password_length = mb_strlen($password);
     $password = addslashes(htmlspecialchars(strip_tags($password)));
 
-
     if($firstname_length < self::MIN_FIRSTNAME) {
       return array('err'=>true,'err_msg'=>$this->i18n->get('short_firstname'));
     } elseif($firstname_length > self::MAX_FIRSTNAME) {
       return array('err'=>true,'err_msg'=>$this->i18n->get('long_firstname'));
-    }  elseif(!preg_match('/^[a-zа-яё]{4,70}$/ui', $firstname )) {
+    } elseif(!preg_match('/^[a-zа-яё]{3,}$/ui', $firstname)) {
       return array('err'=>true, 'err_msg'=>$this->i18n->get('incorrect_firstname'));    
     }
 
@@ -48,10 +44,9 @@ class Model_Reg extends Model{
       return $arr = array('err'=>true,'err_msg'=>$this->i18n->get('short_lastname'));
     } elseif($lastname_length > self::MAX_LASTNAME) {
       return $arr = array('err'=>true,'err_msg'=>$this->i18n->get('long_lastname'));
-    }  elseif(!preg_match('/^[a-zа-яё]{4,70}$/ui', $lastname)) {
+    }  elseif(!preg_match('/^[a-zа-яё]{3,}$/ui', $lastname)) {
       return $err = array('err'=>true,'err_msg'=>$this->i18n->get('incorrect_lastname'));    
     }
-
 
     if($email_length < self::MIN_EMAIL) {
       return $arr = array('err'=>true,'err_msg'=>$this->i18n->get('short_email'));
@@ -61,13 +56,10 @@ class Model_Reg extends Model{
       return $err = array('err'=>true,'err_msg'=>$this->i18n->get('incorrect_email'));    
     }
 
-
     if($password_length < self::MIN_PASSWORD) {
       return $arr = array('err'=>true,'err_msg'=>$this->i18n->get('short_password'));
     } elseif($password_length > self::MAX_PASSWORD) {
       return $arr = array('err'=>true,'err_msg'=>$this->i18n->get('long_password'));
-    } elseif(!preg_match('/^(?=.*[a-z])(?=.*[A-Z]).{4,90}$/ui',$password)) {
-      return $err = array('err'=>true,'err_msg'=>$this->i18n->get('incorrect_password'));    
     }
 
     $is_have_email = $this->database->prepare("SELECT `id` FROM `users` WHERE `email` = :email");
@@ -84,25 +76,23 @@ class Model_Reg extends Model{
     $hash = $this->crypto->generateHash();
     $date_reg = time();
     $ip = $this->user->getIp();
-    $lang = $this->user->getLang();
-    $reg = $this->database->prepare("INSERT INTO `users`(`id`, `first_name`, `last_name`, `email`, `phone`, `date_reg`, `date_birth`, `ip`,
-                                                         `hashed_password`, `salt`, `lang`, `small_photo`, `big_photo`, `ban_time`, `sex`,
-                                                         `user_type`, `university_id`, `university_direction_id`, `course_num`) VALUES (
-                                                         '',:first_name,:last_name,:email,'',:date_reg,'',:ip,
-                                                         :hashed_password,:salt,:lang,'','','','',1,
-                                                         '','','')");
-    $reg->execute(array(':first_name' => $firstname,
-                        ':last_name' => $lastname,
+    $lang = 'ru';
+    $reg = $this->database->prepare("INSERT INTO `users`(`id`, `firstname`, `lastname`, `email`, `reg_date`, `birth_date`, `hashed_password`, `salt`, `lang`, `small_photo`, `big_photo`, `user_type`, `university`, `university_direction`, `university_course`) VALUES ('',:firstname,:lastname,:email,:reg_date,NULL,:hashed_password,:salt,:lang,NULL,NULL,1,NULL,NULL,NULL)");
+    $reg->execute(array(':firstname' => $firstname,
+                        ':lastname' => $lastname,
                         ':email' => $email,
-                        ':date_reg' => $date_reg,
-                        ':ip'=>$ip,
+                        ':reg_date' => $date_reg,
                         ':hashed_password' => $hashed_password,
                         ':salt' => $salt,
                         ':lang' => $lang));
     $last_id = $this->database->lastInsertId();
     $_SESSION['user_id'] = $last_id;
     $_SESSION['user_lang'] = $lang;
-    return array('err'=>false,'url'=>'/id'.$last_id);
+
+    if($ajax === false) {
+      header('Location: /id'.$last_id);
+    }
+
   }
 }
 ?>
