@@ -6,7 +6,7 @@ class Model_Profile extends Model {
   public $user;
   public $log;
 
-  function __construct() {
+  public function __construct() {
     $this->database = DataBase::connect();
     $this->user = new User;
     $this->log = new Log;
@@ -15,42 +15,27 @@ class Model_Profile extends Model {
   
   public function getInfo($uid) {
     $uid = intval($uid);
-  //  $info = $this->user->getInfo($uid, 'first_name, last_name, small_photo, big_photo, date_birth');
 
-
-     $sql = "SELECT `id`,`university_id` FROM `users` WHERE `id` = 3 INNER JOIN `universities` ON `users.university_id` = `universities.id`";
-    /**
-     * array(user_id => <String>'Firstname Lasname')
-     */
-    $owners_cache = array();
-    
     try {
-      $get_news = $this->database->prepare($sql);
-      $get_news->execute();
-      while($row = $get_news->fetch(PDO::FETCH_ASSOC)) {
-        $arr[] = $row;
+      $get_info = $this->database->prepare("SELECT `firstname`, `lastname`, `reg_date`, `birth_date`, `small_photo`, `big_photo`, `university` FROM `users` WHERE `id` = :uid");
+      $get_info->bindParam(':uid', $uid,  PDO::PARAM_INT);
+      $get_info->execute();
+      $row = $get_info->fetch(PDO::FETCH_ASSOC);
+      if(empty($row)) {
+        header('Location: /not_found');
       }
+      $row['reg_date'] = $this->date->getFullDate($row['reg_date']);
+
+      $get_university = $this->database->prepare("SELECT `title` FROM `universities` WHERE `id` = :university_id");
+      $get_university->bindParam(':university_id', $row['university'],  PDO::PARAM_INT);
+      $get_university->execute();
+      $university = $get_university->fetch(PDO::FETCH_ASSOC);
+      $row['university'] = $university['title'];
     } catch (PDOException $e) {
       $this->log->write('['.__FILE__.':'.__LINE__.'] Ошибка базы данных');
     }
-    var_dump($arr);
-/*
-    SELECT *
-FROM
-  Person
-  INNER JOIN
-  City
-    ON Person.CityId = City.Id
-
-    */
-/*
-
-    if(!isset($info) || empty($info) ) {
-      header('Location: /not_found');
-    }
-    $info['date_birth'] = $this->date->getFullDate($info['date_birth']);
-    $info['id'] = $uid;
-    return $info;*/
+   return $row;
+   
   }
 
 }
